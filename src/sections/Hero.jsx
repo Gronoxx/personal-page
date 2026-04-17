@@ -8,7 +8,6 @@ import { Leva, useControls } from "leva";
 import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "../constants/index.js";
 import { Environment } from "@react-three/drei";
-import Target from "../components/Target.jsx";
 import ReactLogo from "../components/ReactLogo";
 import Cube from "../components/Cube";
 import Rings from "../components/Rings";
@@ -51,7 +50,6 @@ const Hero = () => {
 
 
                <group>
-                  <Target position  = {sizes.targetPosition} scale = {sizes.targetScale}/>
                   <ReactLogo position ={sizes.reactLogoPosition} scale ={sizes.reactLogoScale}/>
                   <Cube position = {sizes.cubePosition} scale = {sizes.cubeScale}/>
                   <Rings position = {sizes.ringPosition} scale ={sizes.ringScale}/>
