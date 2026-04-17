@@ -14,6 +14,7 @@ export function Cone(props) {
 
   useFrame(() => {
     if (hasAnimated) return; // Prevent animation after it completes
+    if (!coneRef.current) return;
 
     if (initialTime.current === null) {
       initialTime.current = Date.now();  // Set the start time once, when the animation starts
@@ -36,6 +37,7 @@ export function Cone(props) {
   }, []);
 
   useFrame(()=>{
+    if (!coneRef.current) return;
     coneRef.current.rotation.y -=0.0035;
   })
 

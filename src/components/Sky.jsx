@@ -15,6 +15,7 @@ export function Sky(props) {
 
   useFrame(() => {
     if (hasAnimated) return; // Prevent animation after it completes
+    if (!moonRef.current) return;
 
     if (initialTime.current === null) {
       initialTime.current = Date.now();  // Set the start time once, when the animation starts
@@ -37,6 +38,7 @@ export function Sky(props) {
   }, []);
 
   useFrame(()=>{
+    if (!moonRef.current) return;
     moonRef.current.rotation.y -=0.0035;
   })
 

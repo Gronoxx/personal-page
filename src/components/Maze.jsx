@@ -8,8 +8,9 @@ export function Maze(props, isMobile) {
   const mazeRef = useRef();
   const { nodes, materials } = useGLTF('/models/maze.glb')
 
-  //if(isMobile){ 
+  //if(isMobile){
   useFrame(()=>{
+        if (!mazeRef.current) return;
         mazeRef.current.rotation.y -=0.0035;
         mazeRef.current.rotation.x -=0.00075
    })
